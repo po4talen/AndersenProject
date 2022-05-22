@@ -10,10 +10,24 @@ package school.lesson2;
 public class Task4 {
     public static void main(String[] args) {
         printCycle("Text", 5);
+        System.out.println("Leap year is " + checkLeapYear(1900));
+        System.out.println("Leap year is " + checkLeapYear(1992));
+        System.out.println("Leap year is " + checkLeapYear(2000));
+        System.out.println("Leap year is " + checkLeapYear(2002));
+
     }
     public static void printCycle(String text, int value) {
         for (int i = 0; i < value; i++) {
             System.out.println(text);
+        }
+    }
+
+    public static boolean checkLeapYear(int year){
+        if ((year%4 == 0 && ((year%400 ==0) || (year % 100 !=0)))){
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }
