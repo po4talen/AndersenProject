@@ -9,12 +9,9 @@ public class Main {
         employeeArray[3] = new Employee("Igor Igorov", "batman", "igor@e.com", 63333333, 5000, 44);
         employeeArray[4] = new Employee("Viktor Viktorov", "director", "viktor@e.com", 988888888, 2000, 33);
 
-        int counter = 0;
-        while (counter <= employeeArray.length - 1) {
-            if (employeeArray[counter].getAge() > 40) {
-                employeeArray[counter].employeeInfo();
-            }
-            counter++;
+        for (Employee tempArray : employeeArray) {
+            if (tempArray.getAge() > 40)
+                tempArray.employeeInfo();
         }
     }
 }
