@@ -13,5 +13,10 @@ public class Main {
             if (tempArray.getAge() > 40)
                 tempArray.employeeInfo();
         }
+
+//        for (Employee tempArray : employeeArray) {
+//            if (tempArray.getAge() > 40)
+//                System.out.println(tempArray);;
+//        }
     }
 }

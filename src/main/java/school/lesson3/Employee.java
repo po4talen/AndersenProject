@@ -22,6 +22,20 @@ public class Employee {
     }
 
    public void employeeInfo(){
-       System.out.println("Name: " + this.name + " | Position: " + this.position + " | Email: " + this.email + " | Mobile: " + this.mob + " | Salary: " + this.salary + " | Age: " + this.age);
+       System.out.println("Name: " + name + " | Position: " + position + " | Email: " + email + " | Mobile: " + mob + " | Salary: " + salary + " | Age: " + age);
    }
+
+//    @Override
+//    public String toString() {
+//        return "Employee{" +
+//                "name='" + name + '\'' +
+//                ", position='" + position + '\'' +
+//                ", email='" + email + '\'' +
+//                ", mob=" + mob +
+//                ", salary=" + salary +
+//                ", age=" + age +
+//                '}';
+//    }
+
+
 }
