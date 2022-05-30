@@ -26,6 +26,10 @@ public class Park {
     public static void main(String[] args) {
         Park.Attraction wheel = new Park().new Attraction("wheel", "10:00 - 18:00", 5);
         System.out.println(wheel.toString());
+
+        Park park = new Park();
+        park.attraction = new Park().new Attraction("room of fear", "10:00 - 18:00", 1);
+        System.out.println(park.attraction.toString());
     }
 }
 
