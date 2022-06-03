@@ -6,37 +6,31 @@ public class Main {
 
     public static void main(String[] args) {
         Apple apple = new Apple();
-        Apple apple1 = new Apple();
-        Apple apple2 = new Apple();
         Orange orange = new Orange();
-        Orange orange1 = new Orange();
-        Box <Apple> forApple = new Box<>();
-        Box <Apple> forApple2 = new Box<>();
-        Box <Orange> forOrange = new Box<>();
-        forOrange.putInBox(orange);
-//        forOrange.putInBox(orange1);
- //       forOrange.putInBox(apple);
 
+        Box<Apple> forApple = new Box<>();
         forApple.putInBox(apple);
-        forApple.putInBox(apple1);
-        forApple.putInBox(apple2);
+        forApple.putInBox(apple);
+        forApple.putInBox(apple);
+
+        Box<Apple> forApple2 = new Box<>();
         forApple2.putInBox(apple);
-        forApple2.putInBox(apple1);
-        forApple2.putInBox(apple2);
+        forApple2.putInBox(apple);
+        forApple2.putInBox(apple);
 
-        float a = forApple.getWeight();
-        float b = forOrange.getWeight();
+        Box<Orange> forOrange = new Box<>();
+        forOrange.putInBox(orange);
 
-        forApple.compare(forOrange);
-        forApple.compare(forOrange);
-        System.out.println(forApple.compare2(forApple2));
+        //forOrange.putInBox(apple);
 
 
-//        forApple.putInBox(orange);
+        System.out.println(forApple.compare(forApple2));
+        System.out.println(forApple.compare(forOrange));
 
-//
-       System.out.println(forApple.count);
-        System.out.println(a);
-        System.out.println(b);
+        System.out.println(forApple.count);
+        System.out.println(forApple2.count);
+        forApple.FromBoxToBox(forApple2);
+        System.out.println(forApple.count);
+        System.out.println(forApple2.count);
     }
 }
