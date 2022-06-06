@@ -31,15 +31,16 @@ class Orange extends Fruit {
 class Box<T extends Fruit> {
     ArrayList<T> count = new ArrayList<>();
 
+
  // Не забываем про метод добавления фрукта в коробку.
     void putInBox(T fruit) {
         count.add(fruit);
     }
 
     //Сделать метод getWeight(), который высчитывает вес коробки,
-    float getWeight() {
-        float boxWeight = 0;
-        for (int i = 0; i < count.size(); i++) {
+    float getBoxWeight() {
+            float boxWeight = 0;
+            for (int i = 0; i < count.size(); i++) {
             boxWeight += count.get(i).getFruitWeight();
         }
         return boxWeight;
@@ -48,7 +49,7 @@ class Box<T extends Fruit> {
     /*Внутри класса Box сделать метод compare(), который позволяет сравнить текущую коробку с той, которую подадут в compare() в качестве параметра.
      true – если их массы равны, false в противоположном случае. Можно сравнивать коробки с яблоками и апельсинами;*/
     boolean compare(Box<?> b) {
-        if (this.getWeight() == (b.getWeight())) {
+        if (this.getBoxWeight() == (b.getBoxWeight())) {
             return true;
         } else {
             return false;
@@ -57,9 +58,9 @@ class Box<T extends Fruit> {
 
     /* Написать метод, который позволяет пересыпать фрукты из текущей коробки в другую. Помним про сортировку фруктов: нельзя яблоки высыпать в коробку с апельсинами.
      Соответственно, в текущей коробке фруктов не остается, а в другую перекидываются объекты, которые были в первой;*/
-    void FromBoxToBox(Box<T> b) {
-        this.count.addAll(b.count);
-        b.count.clear();
+    void FromSenderBoxToThisBox(Box<T> senderBox) {
+        this.count.addAll(senderBox.count);
+        senderBox.count.clear();
     }
 }
 

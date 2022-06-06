@@ -1,7 +1,5 @@
 package school.lesson5;
 
-import java.sql.SQLOutput;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -29,7 +27,7 @@ public class Main {
 
         System.out.println(forApple.count);
         System.out.println(forApple2.count);
-        forApple.FromBoxToBox(forApple2);
+        forApple.FromSenderBoxToThisBox(forApple2);
         System.out.println(forApple.count);
         System.out.println(forApple2.count);
     }
