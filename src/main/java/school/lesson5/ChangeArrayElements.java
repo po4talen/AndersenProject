@@ -3,7 +3,7 @@ package school.lesson5;
 
 import java.util.Arrays;
 
-class ChangeArrayElements<T> {
+class ChangeArrayElements {
     public static void setIndex1inIndex2(int[] array, int index1, int index2) {
         int temp = array[index1];
         array[index1] = array[index2];
