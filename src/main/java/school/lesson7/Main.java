@@ -10,35 +10,19 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         File csv = new File("file.scv");
-
-//        String[] header = new String[]{"value1", "value2", "value3"};
-//        int[][] data = new int[2][3];
-//        int[][] data2 = {
-//                {1, 2, 3},
-//                {5, 6, 7}};
-
-
-        // System.out.println(data1.toString());
-
-
-//        try (BufferedWriter csvWr = new BufferedWriter(new FileWriter("file.txt"))) {
-////            for (String temp: header) {
-////                csvWr.write(temp + ";");
-////
-////            }
-//            for (String temp : data1.header) {
-//                csvWr.write(temp + ";");
-//            }
-//
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//
-
-
+        List<String> stringList = new ArrayList<>();
+        stringList.add("Value 1; Value 2; Value 3");
+        stringList.add("100; 200; 123");
+        stringList.add("300; 400; 500");
+        addStringToFile(stringList, csv);
+        ArrayList tempo = new ArrayList<>();
+        tempo = fromFileToString(csv);
+        AppData test = getAppData(tempo);
     }
-    public static void writeStringToFile(ArrayList<String> stringList, File file) throws IOException {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+
+    // Метод запись данных в файл
+    public static void addStringToFile(List<String> stringList, File csv) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(csv))) {
             for (String s : stringList) {
                 writer.write(s);
                 writer.newLine();
@@ -46,7 +30,7 @@ public class Main {
         }
     }
 
-
+    //Метод чтения из файла и запись в List
     public static ArrayList<String> fromFileToString(File csv) throws IOException {
         BufferedReader csvRead = new BufferedReader(new FileReader(csv));
         ArrayList<String> templist = new ArrayList();
@@ -57,7 +41,8 @@ public class Main {
         return templist;
     }
 
-    public static AppData getAppData (ArrayList<String> stringList) {
+    // Метод переобразования данных из List-а и запись в обьект Appdata
+    public static AppData getAppData(ArrayList<String> stringList) {
         String headersString = stringList.get(0);
         String[] headers = headersString.split(";");
         int[][] data = new int[headers.length][stringList.size() - 1];
