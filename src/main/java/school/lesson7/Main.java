@@ -10,6 +10,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         File csv = new File("file.scv");
+        if (!csv.exists()) {
+            csv.createNewFile();
+        }
         List<String> stringList = new ArrayList<>();
         stringList.add("Value 1; Value 2; Value 3");
         stringList.add("100; 200; 123");
